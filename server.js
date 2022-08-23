@@ -3,7 +3,10 @@ const app = express();
 
 const { Router } = require("express");
 //Dotenv environment
-const env = require("dotenv").config();
+require("dotenv").config();
+
+/* ==== Internal Modules ==== */
+const testCtrl = require("./controllers/notescntrl");
 /* ****************Middleware ***************** */
 app.use(express.json());
 //body data middleware
@@ -12,24 +15,24 @@ app.use(express.urlencoded({ extended: true }));
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
+//Requiring controller
+const notesController = require("./controllers/notescntrl");
+
 //Requiring database
-const Notes = require("./models/notes");
+const Note = require("./models/notes");
+const data = require("./models/index");
 //serve public files
 app.use(express.static("public"));
 
 /* *************** Requiring and Connecting Mongoose to the server ***************** */
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/basiccrud2");
+mongoose.connect("mongodb://127.0.0.1:27017/NotesApp");
 mongoose.connection.once("open", () => {
   console.log("Connected to Mongo");
 });
 
 /* ***************** Routes & Controllers ******************** */
-
-app.get("/", (req, res) => {
-  res.render("index.ejs", { Notes });
-});
-
+app.use("/notes", notesController);
 //internal routes
 // app.use("/posts", testCtrl);
 
