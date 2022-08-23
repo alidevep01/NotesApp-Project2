@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 
 const { Router } = require("express");
-
+//Dotenv environment
+const env = require("dotenv").config();
 /* ****************Middleware ***************** */
 app.use(express.json());
 //body data middleware
@@ -24,6 +25,13 @@ mongoose.connection.once("open", () => {
 });
 
 /* ***************** Routes & Controllers ******************** */
+
+app.get("/", (req, res) => {
+  res.render("index.ejs", { Notes });
+});
+
+//internal routes
+// app.use("/posts", testCtrl);
 
 /* ****************** PORT 3000 ******************************* */
 app.listen(3000, () => {

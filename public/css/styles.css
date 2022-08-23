@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+#navbar-notes {
+  font-family: "Dancing Script", cursive;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* font-family: 'Poppins', sans-serif; */
