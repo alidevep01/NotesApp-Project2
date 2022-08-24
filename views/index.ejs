@@ -1,16 +1,24 @@
 <%- include("./partials/header.ejs") %>
   <!-- gird -->
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class=" mainContainer row row-cols-1 row-cols-md-3 g-4 ">
     <% for(let i=0; i<notes.length; i++){%> 
     <div class="col">
       <div class="card notesContainer border-dark">
-        <div class="card-body">
-          <h5 class="card-header text-bg-dark"><a href="/notes/<%= notes[i].id %>">
-             <button type="button" class="btn btn-warning"><%= notes[i].title %></button>
-            </a></h5>
+     
+           <!-- -------------------- Note Name -------------------- -->
+            <div class="card-header text-bg-dark"><a href="/notes/<%= notes[i].id %>">
+                <button type="button" class="btn btn-warning"><%= notes[i].name %></button>
+               </a></div>
+            <div class="card-body">
+             <!-- -------------------- Title -------------------- -->
+             <h5 class="card-title"><%= notes[i].title %></h5>
+
+             <!-- -------------------- Description -------------------- -->
           <p class="card-text"><%= notes[i].description %> </p>
+          <!-- -------------------- Image -------------------- -->
+          <img src="<%= notes[i].img %>" class="card-img-bottom" alt="...">
         </div>
-        <img src="<%= notes[i].img %>" class="card-img-bottom" alt="...">
+        
       </div>
     </div>
     <% }  %> 
