@@ -19,13 +19,13 @@ router.get("/seed", (req, res) => {
         img: "hsdkhfksdhfkshdkf",
       },
       {
-        title: "notes1",
-        description: "pink",
+        title: "notes2",
+        description: "green",
         img: "hsdkhfksdhfkshdkf",
       },
       {
-        title: "notes1",
-        description: "pink",
+        title: "notes3",
+        description: "purple",
         img: "hsdkhfksdhfkshdkf",
       },
     ],
@@ -33,6 +33,13 @@ router.get("/seed", (req, res) => {
       res.redirect("/notes");
     }
   );
+});
+
+//SHOW route
+router.get("/:id", (req, res) => {
+  Note.findById(req.params.id, (err, showNote) => {
+    res.render("show.ejs", { showNote });
+  });
 });
 
 module.exports = router;

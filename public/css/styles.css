@@ -1,8 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.notesContainer {
+  margin: 0 10px;
+}
+
+/* ***************** BUTTONS ************************ */
+
+.addButton {
+  margin-top: 8px;
+  margin-left: 20px;
+}
+
+.btn {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+/* ******************* NAVBAR ************************* */
+
 #navbar-notes {
   font-family: "Dancing Script", cursive;
-  font-size: 25px;
   font-weight: bold;
 }
 

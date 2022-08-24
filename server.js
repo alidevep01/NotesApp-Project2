@@ -25,11 +25,11 @@ const data = require("./models/index");
 app.use(express.static("public"));
 
 /* *************** Requiring and Connecting Mongoose to the server ***************** */
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/NotesApp");
-mongoose.connection.once("open", () => {
-  console.log("Connected to Mongo");
-});
+// const mongoose = require("mongoose");
+// mongoose.connect("mongodb://127.0.0.1:27017/NotesApp");
+// mongoose.connection.once("open", () => {
+//   console.log("Connected to Mongo");
+// });
 
 /* ***************** Routes & Controllers ******************** */
 app.use("/notes", notesController);
