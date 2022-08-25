@@ -14,19 +14,22 @@ router.get("/seed", (req, res) => {
   Note.create(
     [
       {
-        title: "notes1",
+        name: "Note0",
+        title: "title",
         description: "pink",
-        img: "hsdkhfksdhfkshdkf",
+        img: "https://img.ltwebstatic.com/images3_pi/2021/12/21/16400813622748b45198b6eddf6a8fb7a5b3b779a1_thumbnail_900x.webp",
       },
       {
-        title: "notes2",
+        name: "Note1",
+        title: "title",
         description: "green",
-        img: "hsdkhfksdhfkshdkf",
+        img: "https://img.ltwebstatic.com/images3_pi/2021/12/23/1640263616dc5d02e7fdb5f394b32dcf2ef278c2f8_thumbnail_900x.webp",
       },
       {
-        title: "notes3",
+        name: "Note2",
+        title: "title",
         description: "purple",
-        img: "hsdkhfksdhfkshdkf",
+        img: "https://img.ltwebstatic.com/images3_pi/2021/12/23/164026363799039e6f36745c86839004e21628af95_thumbnail_900x.webp",
       },
     ],
     (err, data) => {
