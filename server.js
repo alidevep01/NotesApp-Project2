@@ -38,5 +38,5 @@ app.use("/notes", notesController);
 
 /* ****************** PORT 3000 ******************************* */
 app.listen(process.env.PORT, () => {
-  console.log("Listening on PORT 3000");
+  console.log("Listening on " + process.env.PORT);
 });
