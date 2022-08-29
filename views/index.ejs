@@ -8,7 +8,12 @@
            <!-- -------------------- Note Name -------------------- -->
             <div class="card-header text-bg-dark"><a href="/notes/<%= notes[i].id %>">
                 <button type="button" class="btn btn-warning"><%= notes[i].name %></button>
-               </a></div>
+               </a>
+              <!-- --------------- Delete Button ----------------- -->
+              <form action="/notes/<%= notes[i].id %>?_method=DELETE" method="POST">
+                <input class="btn deleteBtn btn-danger" type="submit" value="X" />
+              </form>
+              </div>
             <div class="card-body">
              <!-- -------------------- Title -------------------- -->
              <h5 class="card-title"><%= notes[i].title %></h5>

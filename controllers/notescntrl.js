@@ -1,3 +1,4 @@
+const { application } = require("express");
 const express = require("express");
 const router = express.Router();
 const Note = require("../models/notes");
@@ -70,6 +71,11 @@ router.get("/:id", (req, res) => {
 //EDIT PUT route
 
 //DELETE route
+router.delete("/:id", (req, res) => {
+  Note.findByIdAndDelete(req.params.id, (err, data) => {
+    res.redirect("/");
+  });
+});
 
 //DELETE POST route
 
