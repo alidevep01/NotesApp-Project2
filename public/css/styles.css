@@ -5,6 +5,7 @@ html {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
 .notesContainer {
@@ -27,11 +28,30 @@ html {
   margin-top: 5px;
 }
 
+.backBtn-newBtn {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* ******************* NAVBAR ************************* */
 
 #navbar-notes {
   font-family: "Dancing Script", cursive;
   font-weight: bold;
+  font-size: 30px;
 }
 
-/* font-family: 'Poppins', sans-serif; */
+/* ***************** Create New Note ******************* */
+
+.newFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#newForm {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}

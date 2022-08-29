@@ -32,7 +32,13 @@ app.use(express.static("public"));
 // });
 
 /* ***************** Routes & Controllers ******************** */
+//HOME route
+app.get("/", (req, res) => {
+  res.redirect("/notes");
+});
+
 app.use("/notes", notesController);
+
 //internal routes
 // app.use("/posts", testCtrl);
 

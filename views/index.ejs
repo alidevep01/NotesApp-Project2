@@ -3,7 +3,7 @@
   <div class=" mainContainer row row-cols-1 row-cols-md-3 g-4 ">
     <% for(let i=0; i<notes.length; i++){%> 
     <div class="col">
-      <div class="card notesContainer border-dark">
+      <div class="card notesContainer border-dark" style="background-color: <%=notes[i].color%>">
      
            <!-- -------------------- Note Name -------------------- -->
             <div class="card-header text-bg-dark"><a href="/notes/<%= notes[i].id %>">
@@ -14,9 +14,9 @@
              <h5 class="card-title"><%= notes[i].title %></h5>
 
              <!-- -------------------- Description -------------------- -->
-          <p class="card-text"><%= notes[i].description %> </p>
+          <p class="card-text" style="color: <%=notes[i].color%>"><%= notes[i].description %> </p>
           <!-- -------------------- Image -------------------- -->
-          <img src="<%= notes[i].img %>" class="card-img-bottom" alt="...">
+          <img src="<%= notes[i].img%>" class="card-img-bottom" alt="...">
         </div>
         
       </div>

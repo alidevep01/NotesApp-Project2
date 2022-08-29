@@ -38,11 +38,39 @@ router.get("/seed", (req, res) => {
   );
 });
 
+//NEW route
+router.get("/new", (req, res) => {
+  res.render("new.ejs");
+});
+
+//NEW POST route
+router.post("/", (req, res) => {
+  Note.create(req.body, (err, createNote) => {
+    console.log(createNote);
+    if (err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      res.redirect("/");
+    }
+  });
+});
+
 //SHOW route
 router.get("/:id", (req, res) => {
   Note.findById(req.params.id, (err, showNote) => {
     res.render("show.ejs", { showNote });
   });
 });
+
+//NEW POST route
+
+//EDIT route
+
+//EDIT PUT route
+
+//DELETE route
+
+//DELETE POST route
 
 module.exports = router;
