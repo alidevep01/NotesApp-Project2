@@ -9,7 +9,13 @@
   </ul> -->
   <div style="background-color: <%=showNote.color%>" class="card text-center">
     <!-- -------------------- Note Name -------------------- -->
-    <div class="card-header"><%= showNote.name %></div>
+    <div class="card-header">
+      <%= showNote.name %>
+      <!-- --------------- Delete Button ----------------- -->
+      <form action="/notes/<%= showNote.id %>?_method=DELETE" method="POST">
+        <input class="btn deleteBtn btn-danger" type="submit" value="X" />
+      </form>
+    </div>
     <div class="card-body">
       <!-- -------------------- Title -------------------- -->
       <h5 class="card-title"><%= showNote.title %></h5>
