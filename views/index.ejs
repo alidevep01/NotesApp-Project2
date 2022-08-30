@@ -3,20 +3,26 @@
   <div class=" mainContainer row row-cols-1 row-cols-md-3 g-4 ">
     <% for(let i=0; i<notes.length; i++){%> 
     <div class="col">
-      <div class="card notesContainer border-dark" style="background-color: <%=notes[i].color%>">
+      <div class="card notesContainer border-dark" >
      
            <!-- -------------------- Note Name -------------------- -->
-            <div class="card-header text-bg-dark"><a href="/notes/<%= notes[i].id %>">
-                <button type="button" class="btn btn-warning"><%= notes[i].name %></button>
-               </a>
+            <div class="card-header" 
+            style="background-color: <%=notes[i].color%>"><a href="/notes/<%= notes[i].id %>">
+                <button type="button" class="btn btn-success" id="noteBtn"><%= notes[i].name %></button>
+              </a>
+              <div class="div2">
+                 <!-- --------------- Edit Button ----------------- -->
+              <a href="/notes/<%= notes[i].id %>/edit "><button class="btn btn-warning">🖊</button></a>
               <!-- --------------- Delete Button ----------------- -->
               <form action="/notes/<%= notes[i].id %>?_method=DELETE" method="POST">
                 <input class="btn deleteBtn btn-danger" type="submit" value="X" />
               </form>
               </div>
+             
+              </div>
             <div class="card-body">
              <!-- -------------------- Title -------------------- -->
-             <h5 class="card-title"><%= notes[i].title %></h5>
+             <h3 class="card-title"><%= notes[i].title %></h3>
 
              <!-- -------------------- Description -------------------- -->
           <p class="card-text" style="color: <%=notes[i].color%>"><%= notes[i].description %> </p>

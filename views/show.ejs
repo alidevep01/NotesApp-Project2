@@ -7,10 +7,10 @@
       <li class="list"><%= showNote.img %></li>
     </div>
   </ul> -->
-  <div style="background-color: <%=showNote.color%>" class="card text-center">
+  <div class="card text-center">
     <!-- -------------------- Note Name -------------------- -->
-    <div class="card-header">
-      <%= showNote.name %>
+    <div class="card-header" style="background-color: <%=showNote.color%>">
+      <button class="btn btn-success"><%= showNote.name %></button>
       <!-- --------------- Delete Button ----------------- -->
       <form action="/notes/<%= showNote.id %>?_method=DELETE" method="POST">
         <input class="btn deleteBtn btn-danger" type="submit" value="X" />
@@ -18,7 +18,7 @@
     </div>
     <div class="card-body">
       <!-- -------------------- Title -------------------- -->
-      <h5 class="card-title"><%= showNote.title %></h5>
+      <h3 class="card-title"><%= showNote.title %></h3>
       <!-- -------------------- Description-------------------- -->
       <p class="card-text"><%= showNote.description %></p>
       <!-- -------------------- image-------------------- -->

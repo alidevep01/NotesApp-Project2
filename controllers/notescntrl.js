@@ -64,11 +64,24 @@ router.get("/:id", (req, res) => {
   });
 });
 
-//NEW POST route
-
 //EDIT route
+router.get("/:id/edit", (req, res) => {
+  Note.findById(req.params.id, (err, foundNote) => {
+    res.render("edit.ejs", { foundNote });
+  });
+});
 
 //EDIT PUT route
+router.put("/:id", (req, res) => {
+  Note.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updateNote) => {
+    if (err) {
+      console.log(err);
+    } else {
+      // res.send(updateNote);
+      res.redirect(`/notes/${req.params.id}`);
+    }
+  });
+});
 
 //DELETE route
 router.delete("/:id", (req, res) => {
