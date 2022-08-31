@@ -47,7 +47,6 @@ router.get("/new", (req, res) => {
 //NEW POST route
 router.post("/", (req, res) => {
   Note.create(req.body, (err, createNote) => {
-    console.log(createNote);
     if (err) {
       console.log(err);
       res.send(err);

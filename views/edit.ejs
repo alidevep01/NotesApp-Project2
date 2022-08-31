@@ -1,40 +1,33 @@
 <%- include("./partials/header.ejs") %> 
 <div class="newFormContainer mainContainer">
-    <h1>Edit Note</h1>
+    <h1 class="editNote">Edit Note</h1>
     <form action="/notes/<%= foundNote.id %>?_method=PUT" method="POST" class="row g-3" id="newForm">
-      <!-- ----- Name Section ----- -->
-      <div class="form-floating mb-3">
-        <input type="text" name="name" class="form-control" id="name" placeholder="name" value="<%=foundNote.name%> ">
-        <label for="name">Name</label>
-      </div>
       <!-- ----- Title Section ----- -->
       <div class="form-floating mb-3">
-        <input type="text" name="title" class="form-control" id="title" placeholder="title" value="<%=foundNote.title%> ">
+        <input type="text" name="title" class="form-control" id="title" placeholder="title" value="<%=foundNote.title%>">
         <label for="title">title</label>
       </div>
       <!-- ----- Description Section ----- -->
       <div class="col-12">
         <div class="form-floating">
-          <textarea class="form-control" placeholder="Add your text here" id="description" name="description" style="height: 100px" value="<%=foundNote.description%>"></textarea>
+          <textarea class="form-control" placeholder="Add your text here" id="description" name="description" style="height: 200px"><%=foundNote.description%></textarea>
           <label for="description">Add your text here</label>
         </div>
       </div>
-      <!-- ----- File upload Section ----- -->
-      <div class="col-6">
-        <div class="mb-3">
-          <label for="formFile" class="form-label">Default file input example</label>
-          <input class="form-control" type="file" name="img" id="formFile" value="<%=foundNote.img%>"/>
-        </div>
+      <!-- ----- IMAGE URL Section ----- -->
+      <div class="form-floating mb-3">
+        <input type="text" name="img" class="form-control" id="img" placeholder="image URL" value="<%=foundNote.img%>">
+        <label for="title">Image URL</label>
       </div>
       <!-- ----- color picker Section ----- -->
       <div class="col-12">
-        <div class="form-check">
-          <label for="exampleColorInput" class="form-label">Note Color</label>
-          <input type="color" name="color" class="form-control form-control-color" id="exampleColorInput" value="<%=foundNote.color%>" title="Choose your color" >
+        <div class="color-picker">
+          <label for="color" class="form-label">Note Color</label>
+          <input type="color" name="color" class="form-control form-control-color" id="color" value="<%=foundNote.color%>" title="Choose your color" >
       </div>
-      <!-- ----- Submit button Section ----- -->
+      <!-- ----- Edit button Section ----- -->
       <div class="col-12">
-        <button type="submit" name="submit" class="btn btn-primary">Create</button>
+        <button type="submit" name="submit" class="btn btn-primary">Edit</button>
       </div>
     </form>
   </div>

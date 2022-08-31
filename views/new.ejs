@@ -2,15 +2,10 @@
 <div class="newFormContainer mainContainer">
   <h1>Create a new Note</h1>
   <form action="/notes" method="POST" class="row g-3" id="newForm">
-    <!-- ----- Name Section ----- -->
-    <div class="form-floating mb-3">
-      <input type="text" name="name" class="form-control" id="name" placeholder="name">
-      <label for="name">Name</label>
-    </div>
     <!-- ----- Title Section ----- -->
     <div class="form-floating mb-3">
       <input type="text" name="title" class="form-control" id="title" placeholder="title">
-      <label for="title">title</label>
+      <label for="title">Title</label>
     </div>
     <!-- ----- Description Section ----- -->
     <div class="col-12">
@@ -20,11 +15,9 @@
       </div>
     </div>
     <!-- ----- File upload Section ----- -->
-    <div class="col-6">
-      <div class="mb-3">
-        <label for="formFile" class="form-label">Default file input example</label>
-        <input class="form-control" type="file" name="img" id="formFile" />
-      </div>
+    <div class="form-floating mb-3">
+      <input type="text" name="img" class="form-control" id="img" placeholder="http image">
+      <label for="img">Image URL</label>
     </div>
     <!-- ----- color picker Section ----- -->
     <div class="col-12">

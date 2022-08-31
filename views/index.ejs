@@ -8,7 +8,7 @@
            <!-- -------------------- Note Name -------------------- -->
             <div class="card-header" 
             style="background-color: <%=notes[i].color%>"><a href="/notes/<%= notes[i].id %>">
-                <button type="button" class="btn btn-success" id="noteBtn"><%= notes[i].name %></button>
+                <button type="button" class="btn btn-success" id="noteBtn"><%= notes[i].title %></button>
               </a>
               <div class="div2">
                  <!-- --------------- Edit Button ----------------- -->
@@ -21,17 +21,34 @@
              
               </div>
             <div class="card-body">
-             <!-- -------------------- Title -------------------- -->
-             <h3 class="card-title"><%= notes[i].title %></h3>
 
              <!-- -------------------- Description -------------------- -->
-          <p class="card-text" style="color: <%=notes[i].color%>"><%= notes[i].description %> </p>
+          <p class="card-text index-text"><%= notes[i].description %> </p>
           <!-- -------------------- Image -------------------- -->
           <img src="<%= notes[i].img%>" class="card-img-bottom" alt="...">
-        </div>
-        
+           <!-- -------------------- ReadMore Btn -------------------- -->
+        </div class="readmore">
+        <a href=" /notes/<%=notes[i].id %>"><div class="btn btn-primary readmoreBtn">Read More</div></a>
+           <!-- ----- save button Section ----- -->
+     <form action="/notes/<%= notes[i].id %>?_method=PUT" method="POST">
+      <div class="col-12">
+        <button type="submit" name="submit" class="btn btn-primary editBtn" style="display: hidden;">Save</button>
+      </div>
+    </form>
       </div>
     </div>
     <% }  %> 
 </div>
+<script>
+  let readmoreBtn = document.querySelectorAll(".readmoreBtn");
+  let indexText = document.querySelectorAll(".index-text");
+  for (let i in indexText) {
+    console.log(indexText[i].style);
+    if (indexText[i].innerText.length > 350) {
+      readmoreBtn[i].style.display = "inline";
+    } else {
+      readmoreBtn[i].style.display = "none";
+    }
+  }
+</script>
 <%- include('./partials/footer.ejs') %>

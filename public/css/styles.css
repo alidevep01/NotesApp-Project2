@@ -33,6 +33,10 @@ html {
   justify-content: space-between;
 }
 
+.readmoreBtn,
+.editBtn {
+  margin: 10px;
+}
 /* ******************* NAVBAR ************************* */
 
 #navbar-notes {
@@ -45,9 +49,9 @@ html {
 
 .newFormContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
 #newForm {
   border: 1px solid black;
@@ -65,4 +69,17 @@ html {
 
 .div2 {
   display: flex;
+}
+
+/* ***************** Card Body ******************* */
+
+.index-text {
+  max-height: 300px;
+  text-overflow: clip;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.card-body {
+  white-space: break-spaces;
 }
